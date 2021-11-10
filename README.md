@@ -31,7 +31,7 @@ Commands:
 $ pypassword encrypt
 Enter your password: nopassword
 Enter the path of the image you want to hide your password(with extension): Macbook.png
-Enter the path to save encoded image with extension(Leave blank to save in current working directory): encoded_macbook.png
+Enter a name for encoded image with extension(Encoded image will be saved in working directory.): encoded_macbook.png
 
 Your password(nopassword) has been successfully encoded in the image(Macbook.png)
 Encoded image has been saved associated with the entered name(encoded_macbook.png)!
