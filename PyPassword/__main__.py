@@ -12,20 +12,24 @@ try:
     from examples import custom_style_1
 
 except ModuleNotFoundError:
-    with open("requirements.txt", 'r') as f:
-        print(f"""
-[ERROR] Unmet Dependencies!
-# Depends On
-{f.read()}
+    try:
+        with open("requirements.txt", 'r') as f:
+            print(f"""
+    [ERROR] Unmet Dependencies!
+    # Depends On
+    {f.read()}
 
-Installing Dependencies...
-    """)
-    os.system("pip install -r requirements.txt")
+    Installing Dependencies...
+        """)
+        os.system("pip install -r requirements.txt")
 
-    if os.name == 'nt': os.system('cls')
-    else: os.system('clear')
+        if os.name == 'nt': os.system('cls')
+        else: os.system('clear')
 
-    exit(print("\nDependencies installed! Please re-run the application."))
+        exit(print("\nDependencies installed! Please re-run the application."))
+       
+    except FileNotFoundError:
+        exit(print("[ERROR] `requirements.txt` file not found!"))
 
 CHARACTERS = list(string.ascii_lowercase + string.ascii_uppercase)
 DIGITS = list(string.digits)
